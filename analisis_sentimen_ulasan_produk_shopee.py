@@ -1,3 +1,24 @@
+# Import Library
+import requests
+import pandas as pd
+import re
+from bs4 import BeautifulSoup
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report, accuracy_score
+from nltk.corpus import stopwords
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+import nltk
+import json
+import random
+import time
+
+#Download NLTK Stopwords
+nltk.download('stopwords')
+
 """## Scraping Data"""
 
 # Scraping Data Playsotre
