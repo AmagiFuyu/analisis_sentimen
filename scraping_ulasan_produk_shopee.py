@@ -45,3 +45,10 @@ def scrape_playstore_reviews(app_id, num_reviews=3000):
         if len(reviews) >= num_reviews:
             break
     return pd.DataFrame(reviews[:num_reviews], columns=['review'])
+
+# Simpan dataset ke file CSV
+if __name__ == "__main__":
+    app_id = "com.shopee.id"
+    df = scrape_playstore_reviews(app_id, num_reviews=3000)
+    df.to_csv("dataset_ulasan_shopee.csv", index=False)
+    print("Dataset berhasil disimpan ke 'dataset_ulasan_shopee.csv'")
